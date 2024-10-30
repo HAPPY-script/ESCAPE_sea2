@@ -18,13 +18,13 @@ ScreenGui.ResetOnSpawn = false
 
 
 EscapeFrame.Size = UDim2.new(0, 200, 0, 100)
-EscapeFrame.Position = UDim2.new(1, 0, 0.8, 0) 
+EscapeFrame.Position = UDim2.new(1, 0, 0.8, 0)
 EscapeFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 EscapeFrame.BackgroundTransparency = 0.3
 EscapeFrame.BorderSizePixel = 0
 EscapeFrame.Parent = ScreenGui
 
-
+-- Cấu hình TextLabel cho câu hỏi
 EscapeText.Size = UDim2.new(1, 0, 0.6, 0)
 EscapeText.Position = UDim2.new(0, 0, 0, 0)
 EscapeText.BackgroundTransparency = 1
@@ -55,7 +55,7 @@ local function checkHealth()
         displayed = true
         EscapeFrame:TweenPosition(UDim2.new(0.75, 0, 0.8, 0), "Out", "Quad", 0.5, true)
     elseif (healthRatio >= 0.5 or humanoid.Health <= 0) and displayed then
-        -- Ẩn menu thoát hiểm bằng hiệu ứng trượt khi máu trên 50% hoặc khi chết
+        
         displayed = false
         EscapeFrame:TweenPosition(UDim2.new(1, 0, 0.8, 0), "Out", "Quad", 0.5, true)
     end
@@ -73,7 +73,7 @@ local function onCharacterAdded(newCharacter)
     end)
 end
 
--
+
 player.CharacterAdded:Connect(onCharacterAdded)
 
 
